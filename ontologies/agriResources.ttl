@@ -136,6 +136,13 @@ foaf:name rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  https://uri.fiware.org/ns/data-models#devices
+fiware:devices rdf:type owl:ObjectProperty ;
+                rdfs:comment "Reference to the IoT devices (i.e. sensors) which generated the water quality observations." ;
+                rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Water-Quality-Observed.md> ;
+                rdfs:label "quantity"@en .
+
+
 ###  http://foodie-cloud.com/model/foodie#nutrient
 foodie:nutrient rdf:type owl:ObjectProperty ;
                 rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
@@ -147,11 +154,11 @@ foodie:nutrientAmount rdf:type owl:ObjectProperty ;
                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
                       skos:prefLabel "nutrientAmount"@en .
 
-
-###  http://foodie-cloud.com/model/foodie#solventQuantity
-foodie:solventQuantity rdf:type owl:ObjectProperty ;
-                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
-                       skos:prefLabel "solventQuantity"@en .
+###  https://uri.fiware.org/ns/data-models#smartMeter
+fiware:smartMeter rdf:type owl:ObjectProperty ;
+                  rdfs:comment "Reference to the Smart Meter that this observation relates to." ;
+                  rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Smart-Meter-Observed.md> ;
+                  rdfs:label "smartMeter"@en .
 
 
 #################################################################
@@ -184,6 +191,25 @@ fiware:quantity rdf:type owl:DatatypeProperty ;
                 rdfs:comment "The total quantity of water or product used/ applied. It is recommended this is measured in litres for liquids or kilogrammes for solids." ;
                 rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Agri-Parcel-Record.md> ;
                 rdfs:label "quantity"@en .
+
+
+###  https://uri.fiware.org/ns/data-models#salinity
+fiware:salinity rdf:type owl:DatatypeProperty ;
+                rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Water-Quality-Observed.md> ;
+                rdfs:label "salinity"@en .
+
+
+###  http://foodie-cloud.com/model/foodie#solventQuantity
+foodie:solventQuantity rdf:type owl:DatatypeProperty ;
+                       rdfs:isDefinedBy <http://foodie-cloud.com/model/foodie> ;
+                       skos:prefLabel "solventQuantity"@en .
+
+
+###  https://uri.fiware.org/ns/data-models#totalConsumption
+fiware:totalConsumption rdf:type owl:DatatypeProperty ;
+                	rdfs:comment "The total amount of product supplied as recorded by the meter since installation. The relevant unitCode should be specified such as KWH for Electricity, LTR or MTQ for gases or liquids." ;
+                	rdfs:isDefinedBy <https://github.com/GSMADeveloper/NGSI-LD-Entities/blob/master/definitions/Smart-Meter-Observed.md> ;
+                	rdfs:label "totalConsumption"@en .
 
 
 #################################################################
